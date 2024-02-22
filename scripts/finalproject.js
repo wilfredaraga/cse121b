@@ -5,9 +5,11 @@ const getMeaning = async () => {
     let word = String(document.querySelector('#word').value);
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     const response = await fetch(url);
-    data = await response.json();
-    displayMeaning(data);
-    reduceSynonyms(data);
+    if (response.ok) {
+        data = await response.json();
+        displayMeaning(data);
+        reduceSynonyms(data);
+    }
 }
 const displayMeaning = (means) => {
     const article = document.createElement('article');
@@ -26,8 +28,10 @@ const getData = async () => {
     let word = String(document.querySelector('#word').value);
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     const response = await fetch(url);
-    data = await response.json();
-    return data;
+    if (response.ok) {
+        data = await response.json();
+        return data;
+    }
 }
 
 const reduceSynonyms = (meaning) => {
