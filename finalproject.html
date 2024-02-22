@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 121b | W06: Final Project</title>
+</head>
+<body>
+    <main>
+        <h1>W06: Final Project</h1>
+        <h2>Dictionary</h2>
+
+        <form>
+            <label for="word">Type the word here: </label>
+            <input type="text" id="word" name="word">
+            <input type="submit" value="Search" id="search">
+        </form>
+
+        <div id="meaning"></div>
+    </main>
+    <footer>
+        <span id="year"></span> | Week 06 - Final Project | CSE 121b
+      </footer>
+      <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+      </script>
+    <script src="scripts/finalproject.js"></script>
+</body>
+</html>
